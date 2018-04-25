@@ -14,6 +14,7 @@ export class DateCountPipe implements PipeTransform {
     var dateDifferenceSeconds = dateDifference*0.001;//Converts to seconds
 
     var dateCounter = dateDifferenceSeconds/secondsInDay;
+    // console.log(value);
 
     if(dateCounter >=1){
       return dateCounter;

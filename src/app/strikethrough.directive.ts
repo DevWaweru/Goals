@@ -10,8 +10,9 @@ export class StrikethroughDirective {
     
   }
   @HostListener("click") onClicks(){
-    this.textDeco('line-through');
+    this.textDeco('uppercase');
   }
+  
   @HostListener("dblclick") onDoubleClick(){
     this.textDeco('None');
   }

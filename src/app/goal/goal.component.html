@@ -1,15 +1,26 @@
 <!-- <p>
   goal works!
 </p> -->
-<div class="jumbotron">
+<div class="jumbotron text-center">
+  <ng-progress></ng-progress>
   <h1>My Goals</h1>
+  <blockquote class="text-center text-lg">
+    <p>{{getQuote.quote}}</p>
+    <footer>
+      <cite>{{getQuote.author}}</cite>
+    </footer>
+  </blockquote>
 </div>
 <hr>
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
-        <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
-      </div>
+      <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
+    </div>
     <div class="col-md-6">
       <p>My goal for the day is to understand</p>
       <!-- <ol>
@@ -27,7 +38,6 @@
           <li id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</li>
           <button class="btn btn-primary" (click)='toggleDetails(i)'>Toggle Details</button>
           <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details>
-
         </div>
       </ol>
       <div class="row">
