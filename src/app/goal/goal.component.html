@@ -37,7 +37,9 @@
         <div *ngFor="let goal of goals; let i = index">
           <li id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</li>
           <button class="btn btn-primary" (click)='toggleDetails(i)'>Toggle Details</button>
-          <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details>
+          <button class="btn btn-primary" (click)='goToUrl(goal.id)'>View Details</button>
+          <button class="btn btn-danger" (click)="deleteGoal(i)">Delete</button>
+          <!-- <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details> -->
         </div>
       </ol>
       <div class="row">

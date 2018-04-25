@@ -16,14 +16,15 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RoutingModule } from './routing/routing.module'
 
 //Defining routes
-const routes:Routes=[
-  {path:"goals",component:GoalComponent},
-  {path:"about",component:AboutComponent},
-  {path: "",redirectTo:"/goals",pathMatch:"full"},
-  {path:'**',component:NotFoundComponent}
-]
+// const routes:Routes=[
+//   {path:"goals",component:GoalComponent},
+//   {path:"about",component:AboutComponent},
+//   {path: "",redirectTo:"/goals",pathMatch:"full"},
+//   {path:'**',component:NotFoundComponent}
+// ]
 
 @NgModule({
   declarations: [
@@ -39,10 +40,11 @@ const routes:Routes=[
   imports: [
     BrowserModule,
     FormsModule,
+    RoutingModule,
     HttpClientModule,
     NgProgressModule.forRoot(),
-    NgProgressHttpModule,
-    RouterModule.forRoot(routes)
+    NgProgressHttpModule
+    // RouterModule.forRoot(routes)
   ],
   providers: [AlertsService],
   bootstrap: [AppComponent]
