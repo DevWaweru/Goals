@@ -41,14 +41,14 @@ export class GoalComponent implements OnInit {
   //Routing to specific goal ID
   goToUrl(id){
     this.router.navigate(['/goals',id]);
-    console.log(id)
+    // console.log(id)
   }
   deleteGoal(/*isComplete,*/index){
     // if(isComplete){
       let toDelete = confirm(`Are you sure you want to delete ${this.goals[index].name} goal?`)
       if(toDelete){
         this.goals.splice(index,1);
-        this.alertService.alertMe("Goal has been Deleted")
+        this.alertService.alertMe("Goal has been Deleted");
       // }
     }
   }

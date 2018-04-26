@@ -1,6 +1,3 @@
-<!-- <p>
-  goal works!
-</p> -->
 <div class="jumbotron text-center">
   <ng-progress></ng-progress>
   <h1>My Goals</h1>
@@ -23,20 +20,10 @@
     </div>
     <div class="col-md-6">
       <p>My goal for the day is to understand</p>
-      <!-- <ol>
-  <li *ngFor='let goal of goals'>{{goal.name}}</li>
-  <app-goal-details [goal]='goal' ></app-goal-details>
-</ol> -->
-      <!-- <ol>
-  <div *ngFor="let goal of goals">
-    <li>{{goal.name}}</li>
-    <app-goal-details [goal]='goal'></app-goal-details>
-  </div>
-</ol> -->
       <ol>
         <div *ngFor="let goal of goals; let i = index">
           <li id="{{i}}" appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</li>
-          <button class="btn btn-primary" (click)='toggleDetails(i)'>Toggle Details</button>
+          <!-- <button class="btn btn-primary" (click)='toggleDetails(i)'>Toggle Details</button> -->
           <button class="btn btn-primary" (click)='goToUrl(goal.id)'>View Details</button>
           <button class="btn btn-danger" (click)="deleteGoal(i)">Delete</button>
           <!-- <app-goal-details *ngIf="goal.showDescription" [goal]='goal' (isComplete)='deleteGoal($event,i)'></app-goal-details> -->
@@ -48,8 +35,3 @@
     </div>
   </div>
 </div>
-<!-- <div class="container">
-  <div class="row">
-    <app-goal-form (addGoal)="addNewGoal($event)"></app-goal-form>
-  </div>
-</div> -->
