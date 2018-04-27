@@ -20,7 +20,7 @@ export class QuoteRequestService {
       this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(respond=>{
         this.quote.quote=respond.quote;
         this.quote.author=respond.author;
-        resolve()
+        resolve();
       },error=>{
         this.quote.quote="Never, Never, Never give up";
         this.quote.author="Winston Churchill";
